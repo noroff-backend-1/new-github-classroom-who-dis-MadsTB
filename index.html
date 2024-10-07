@@ -28,19 +28,24 @@
 
     <script>
 
-        // 1. Create a let variable called isDark. It should be initialized to false.
+let isDark = false
 
-        // 2. JQuery: Write the code for accessing when the document is ready
+$(document).ready(() => {
+    $("#btn-dark-mode").on("click", changeMode)
+    function changeMode() {
+        if (isDark) {
+            $("body").css("background-color", "white").css("color", "#111")
+            $(".header").css("color", "#111")
+            $("#btn-dark-mode").text("🌑")
+        } else {
+            $("body").css("background-color", "#111").css("color", "aliceblue")
+            $(".header").css("color", "aliceblue")
+            $("#btn-dark-mode").text("🌕")
+        }
+        isDark = !isDark
+    }
+})
 
-        // 3. Write a click event handler for the button. It should link to a function called "changeMode"
-
-        // 4. Inside the function "changeMode", check if isDark is true or false
-
-        // 5. If it's true, change the background color of the body to white, and the foreground color to #111. Change the color of the header to #111. Change the button text to 🌑
-
-        // 6. If it's false, change the background color of the body to #111, and the foreground color to aliceblue. Change the color of the header to aliceblue. Change the button text to 🌕
-
-        // 7. Finally, change the value of isDark to whatever it wasn't before
 
     </script>
 </body>
